@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import StoreContext from "../../store/StoreContext";
 const cart = [
   {
     title: "Colors",
@@ -37,9 +38,11 @@ const cart = [
   },
 ];
 const Cart = () => {
+  const ctx=useContext(StoreContext)
+console.log("itm:  ",ctx.items)
   return (
     <div>
-      {cart.map((itm) => (
+      {ctx.items.map((itm) => (
         <div className="flex items-center justify-evenly my-8 border-b-2 p-2 border-black">
           <img className="h-16 rounded-md" src={itm.imageUrl} />
           <p className="w-10 text-wrap">{itm.title}</p>

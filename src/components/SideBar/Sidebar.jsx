@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import Cart from "../Cart/Cart";
+import StoreContext from "../../store/StoreContext";
 
 const Sidebar = () => {
+    const ctx=useContext(StoreContext)
   return (
     <div className="drawer drawer-end">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
@@ -12,7 +14,7 @@ const Sidebar = () => {
           className="drawer-button border p-2 rounded-md border-green-200 cursor-pointer"
         >
           Cart
-          <p className="absolute -top-2 text-green-400 -right-3">0</p>
+          <p className="absolute -top-4 text-green-400 -right-3">{ctx.totalItems}</p>
         </label>
       </div>
       <div className="drawer-side">
