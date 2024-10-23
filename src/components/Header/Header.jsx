@@ -21,6 +21,12 @@ const Header = () => {
         <p>
           <NavLink to="/about">About</NavLink>
         </p>
+        <p>
+          <NavLink to="/login">Login</NavLink>
+        </p>
+        <p>
+          <NavLink to="/signup">Signup</NavLink>
+        </p>
       </div>
       <div className="absolute right-4 top-4">
         <Sidebar/>
