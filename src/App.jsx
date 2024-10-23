@@ -6,9 +6,18 @@ import HomePage from "./pages/HomePage/HomePage";
 import About from "./pages/About/About";
 import Products from "./components/Products/Products";
 import ProductDetails from "./pages/Products/ProductDetails";
+import AuthContext from "./store/authContext";
 
 
 function App() {
+  const authCtx = useContext(AuthContext);
+  // console.log(authCtx.isLoggedIn);
+  const requireAuth = async () => {
+    if (!authCtx.isLoggedIn) {
+      return redirect("/auth/login");
+    }
+    return null;
+  };
 
   return (
     <BrowserRouter>
